@@ -3,6 +3,7 @@ package guru.qa;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static com.codeborne.selenide.Condition.text;
@@ -17,11 +18,8 @@ public class ParameterizedSampleTest {
         Configuration.browserSize = "1920x1080";
     }
 
-    @CsvSource({
-            "apple, Смартфоны",
-            "karcher, Пылесосы",
-            "liebherr, Холодильники"
-    })
+
+    @CsvFileSource(resources = "/testData.csv")
 
 
     @ParameterizedTest(name = "В результате поиска продукции бренда {0} должен появиться раздел {1}")
