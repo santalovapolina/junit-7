@@ -4,5 +4,6 @@
 *.log
 gradlew/
 gradlew.bat
-
+build
+settings.gradle
 
