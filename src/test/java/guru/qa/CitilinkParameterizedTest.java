@@ -1,6 +1,5 @@
 package guru.qa;
 
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -16,9 +15,8 @@ import static com.codeborne.selenide.Selenide.*;
 public class CitilinkParameterizedTest {
 
     @BeforeEach
-    void beforeEach() {
+    void setUp() {
         open("https://www.citilink.ru");
-        Configuration.browserSize = "1920x1080";
     }
 
 
